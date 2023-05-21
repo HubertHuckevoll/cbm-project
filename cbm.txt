@@ -1,0 +1,38 @@
+meyerk
+------
+
+cbm
+  vw
+    cbmPageV.php
+    cbmIndexPageV.php
+    cbmArticlePageV.php
+    cbmOtherPageV.php
+  ct
+    cbmArticleC.php
+    cbmPageC.php
+    cbmAppC.php
+  md
+    cbmFileReaderM.php
+    cbmFolderReaderM.php
+    cbmHtmlFragmentParserM.php
+  cbmLoader.php
+
+project
+ct
+  indexC.php
+  articleC.php
+  pageC.php
+vw
+  assets
+  meyerk.htmlt
+  indexV.php
+  articleV.php
+  pageV.php
+  styles.css
+  code.js
+
+cbm.datastore
+  attachments
+  articles
+  pages
+

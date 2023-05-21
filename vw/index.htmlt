@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title><cbm-title></title>
+        </head>
+        <body>
+            <header>
+                <h1><cbm-header></h1>
+            </header>
+            <main>
+                <cbm-content>
+            </main>
+        </body>
+    </html>
