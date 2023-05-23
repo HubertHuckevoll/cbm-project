@@ -6,17 +6,10 @@
  */
 class indexC extends cbmIndexC
 {
-  public function __construct()
+  public function __construct(array $request)
   {
-    try
-    {
-      $pv = new cbmIndexPageV('index');
-      parent::__construct($pv, 'articles');
-    }
-    catch (Exception $e)
-    {
-      die($e->getMessage());
-    }
+    $pv = new cbmIndexV('index');
+    parent::__construct($pv, 'articles');
   }
 
   public function index()

@@ -6,17 +6,10 @@
  */
 class articleC extends cbmArticleC
 {
-  public function __construct()
+  public function __construct(array $request)
   {
-    try
-    {
-      $pv = new cbmPageV('article');
-      parent::__construct($pv, 'articles', '2023-05-21_geliebte_tante');
-    }
-    catch (Exception $e)
-    {
-      die($e->getMessage());
-    }
+    $pv = new cbmArticleV('article');
+    parent::__construct($pv, $request['articleBox'], $request['articleName']);
   }
 }
 
