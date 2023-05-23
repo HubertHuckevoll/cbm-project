@@ -11,5 +11,8 @@
             <main>
                 <cbm-content>
             </main>
+            <section>
+                <cbm-section>
+            </section>
         </body>
     </html>
