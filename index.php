@@ -6,7 +6,7 @@ require_once('./loader.php');
 
 try
 {
-  $talR = new cbmAppC('indexC', 'index');
+  $talR = new cbmAppC('cbm.datastore', 'indexC', 'index');
   $talR->runWithPathInfo();
 }
 catch (Exception $e)

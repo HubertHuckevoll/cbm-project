@@ -6,10 +6,10 @@
  */
 class articleC extends cbmArticleC
 {
-  public function __construct(array $request)
+  public function __construct(string $store, array $request)
   {
     $pv = new cbmArticleV('article');
-    parent::__construct($pv, $request['articleBox'], $request['articleName']);
+    parent::__construct($pv, $store, $request['articleBox'], $request['articleName']);
   }
 }
 
