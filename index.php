@@ -1,6 +1,5 @@
 <?php
 
-require_once('../cbm/lb/logger.php');
 require_once('../cbm/cbmLoader.php');
 require_once('./loader.php');
 

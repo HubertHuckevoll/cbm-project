@@ -13,7 +13,7 @@ class indexV extends cbmPageV
 
   public function cbmContent()
   {
-    $articles = $this->getData('articles') ?? null;
+    $articles = $this->getData('pages') ?? null;
     return $this->renderIndexWithTeaser($articles);
   }
 }
