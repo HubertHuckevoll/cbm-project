@@ -1,10 +1,10 @@
 <?php
 
-require_once('../cbm/cbmLoader.php');
+require_once('../cbm/loader.php');
 
 try
 {
-  $router = new cbmAppC('cbm.datastore');
+  $router = new cbmAppC('cbmtest.data');
   $router->run();
 }
 catch (Exception $e)
