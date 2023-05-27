@@ -7,13 +7,13 @@ class indexV extends cbmPageV
   public function cbmHeader()
   {
     $str  = '';
-    $str .= $this->getData('meta')['articleBox'] ?? '';
+    $str .= ucfirst($this->getData('meta')['articleBox']) ?? '';
     return $str;
   }
 
   public function cbmContent()
   {
-    $articles = $this->getData('pages') ?? null;
+    $articles = $this->getData('articles') ?? null;
     return $this->renderIndexWithTeaser($articles);
   }
 }
