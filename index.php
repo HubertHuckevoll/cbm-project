@@ -1,12 +1,11 @@
 <?php
 
 require_once('../cbm/cbmLoader.php');
-require_once('./loader.php');
 
 try
 {
-  $talR = new cbmAppC('cbm.datastore');
-  $talR->runWithPathInfo();
+  $router = new cbmAppC('cbm.datastore');
+  $router->run();
 }
 catch (Exception $e)
 {
