@@ -15,7 +15,8 @@
             <main>
                 <cbm-content>
             </main>
-            <aside></aside>
-            <footer></footer>
+            <footer>
+                <a href="index.php/pageC/show/about">Tell me more!</a>
+            </footer>
         </body>
     </html>
