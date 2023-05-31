@@ -7,7 +7,7 @@ try
   $router = new cbmAppC('cbmtest.data');
   $router->run();
 }
-catch (Exception $e)
+catch (Throwable $e)
 {
   die($e->getMessage());
 }
