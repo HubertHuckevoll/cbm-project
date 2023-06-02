@@ -2,15 +2,11 @@
 
 require_once('../cbm/loader.php');
 
-try
-{
-  $router = new cbmAppC('cbmtest.data');
-  $router->run();
-}
-catch (Throwable $e)
-{
-  die($e->getMessage());
-}
+$prefs = [
+  'indexArticlesPerPage' => 1
+];
 
+$router = new cbmAppC('cbmtest.data', $prefs);
+$router->run();
 
 ?>
