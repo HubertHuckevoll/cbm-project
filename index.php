@@ -3,7 +3,7 @@
 require_once('../cbm/loader.php');
 
 $prefs = [
-  'indexArticlesPerPage' => 1
+  'articlesPerPage' => 3
 ];
 
 $router = new cbmAppC('cbmtest.data', $prefs);
