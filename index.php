@@ -6,7 +6,7 @@ $prefs = [
   'articlesPerPage' => 3
 ];
 
-$router = new cbmAppC('cbmtest.data', $prefs);
+$router = new cbmAppC('cbm-project.data', $prefs);
 $router->run();
 
 ?>

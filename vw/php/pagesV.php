@@ -1,6 +1,6 @@
 <?php
 
-class pageV extends cbmPageV
+class pagesV extends cbmPageV
 {
   public function cbmBase()
   {
