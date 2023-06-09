@@ -1,14 +1,25 @@
 <?php
 
-class teasersV extends cbmTeasersV
+class teasersV extends cbmPageV
 {
   /**
-   * Summary of __construct
-   * @param mixed $templName
+   * Summary of drawRandom
+   * @return string
    * ________________________________________________________________
    */
-  public function __construct()
-  {}
+  public function cbmContent(): string
+  {
+    $str = '';
+    $entries = $this->get('index', 'articles');
+
+    foreach($entries as $entry)
+    {
+      $str .= '<p>'.$entry['articleName'].'</p>';
+    }
+
+    return $str;
+  }
+
 }
 
 ?>
