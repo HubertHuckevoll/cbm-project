@@ -9,8 +9,15 @@ class searchV extends cbmPageV
    */
   public function cbmContent(): string
   {
-    logger::vh($this->data);
-    return '';
+    $str = '';
+    $entries = $this->get('search', 'results');
+
+    foreach($entries as $entry)
+    {
+      $str .= '<p><a href="'.$this->renderHrefArticle($entry['article']['articleName']).'">'.$entry['hit'].'</a></p>';
+    }
+
+    return $str;
   }
 
 }
