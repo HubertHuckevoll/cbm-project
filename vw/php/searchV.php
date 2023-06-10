@@ -2,6 +2,17 @@
 
 class searchV extends cbmPageV
 {
+
+  /**
+   * Summary of cbmBase
+   * @return string
+   * ________________________________________________________________
+   */
+  public function cbmBase(): string
+  {
+    return $this->renderBaseTag();
+  }
+
   /**
    * Summary of drawRandom
    * @return string

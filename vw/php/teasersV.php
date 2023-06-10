@@ -2,6 +2,17 @@
 
 class teasersV extends cbmPageV
 {
+
+  /**
+   * Summary of cbmBase
+   * @return string
+   * ________________________________________________________________
+   */
+  public function cbmBase(): string
+  {
+    return $this->renderBaseTag();
+  }
+
   /**
    * Summary of drawRandom
    * @return string
@@ -14,7 +25,7 @@ class teasersV extends cbmPageV
 
     foreach($entries as $entry)
     {
-      $str .= '<p>'.$entry['articleName'].'</p>';
+      $str .= '<p><a href="'.$this->renderHrefArticle($entry['articleName']).'">'.$entry['articleName'].'</a></p>';
     }
 
     return $str;

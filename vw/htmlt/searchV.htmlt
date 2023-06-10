@@ -1,2 +1,17 @@
-<h3>Suchergebnisse</h3>
-<cbm-content>
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title><cbm-title></title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+            <cbm-base>
+        </head>
+        <body>
+            <header>
+                <h1>Suchergebnisse</h1>
+            </header>
+            <main>
+                <cbm-content>
+            </main>
+        </body>
+    </html>
