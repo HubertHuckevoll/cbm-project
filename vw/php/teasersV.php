@@ -21,7 +21,7 @@ class teasersV extends cbmPageV
   public function cbmContent(): string
   {
     $str = '';
-    $entries = $this->get('index', 'articles');
+    $entries = $this->get('teasers', 'articles');
 
     foreach($entries as $entry)
     {
