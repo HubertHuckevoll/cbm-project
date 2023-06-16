@@ -66,7 +66,7 @@ XML;
 $xml = simplexml_load_string($hstr, null, LIBXML_NOCDATA | LIBXML_NOBLANKS);
 $json = json_encode($xml);
 $arr = json_decode($json, true);
-$arr['content'] = $xml->xpath('/content/*')[0]->asXML();
+$arr['content'] = $xml->xpath('./content/*')[0]->asXML();
 
 $out = '';
 $out  = '<pre>';
