@@ -30,11 +30,13 @@ XML;
 $hstr = <<<XML
 <?xml version="1.0" encoding="UTF-8" ?>
 <cbm>
+    <version>1</version>
     <title>Schneeammer</title>
+    <author>K. Meyer</author>
     <header>Schneeammer</header>
     <summary>Schneeammer</summary>
     <content>
-        <div xmlns="http://www.w3.org/1999/xhtml">
+        <html xmlns:html="http://www.w3.org/1999/xhtml">
             <ul>
                 <li>
                 Ab Mitte der 1770er Jahre ließ der auf Gordon Castle residierende Alexander Gordon, 4. Duke of Gordon die Ortschaft Fochabers in
@@ -54,25 +56,46 @@ $hstr = <<<XML
             <div>
                 Seattle <strong>Firefighters</strong>.
             </div>
-        </div>
+        </html>
     </content>
     <images>
         <img title="Schneeammer">schneeammer.png</img>
+        <img title="Schneehammer">schneehammer.png</img>
+        <img title="Schneeeule">schneeeule.png</img>
     </images>
 </cbm>
 XML;
 
 
 $xml = simplexml_load_string($hstr, null, LIBXML_NOCDATA | LIBXML_NOBLANKS);
+
+foreach($xml->images->children() as $img)
+{
+    echo $img['title'];
+    echo "<br>";
+}
+
+echo $xml->images->img[1]['title'];
+
+
+
 $json = json_encode($xml);
 $arr = json_decode($json, true);
-$arr['content'] = $xml->xpath('./content/*')[0]->asXML();
+
+$arr['content'] = '';
+$nodes = $xml->content->xpath('html/*');
+
+foreach ($nodes as $node)
+{
+  $arr['content'] .= $node->asXML();
+}
 
 $out = '';
 $out  = '<pre>';
-$out .= print_r($arr, true);
+//$out .= print_r($arr, true);
+$out .= $xml->images[0]['title'];
 $out .= '</pre>';
 
-echo $out;
+//echo $out;
 
 ?>
