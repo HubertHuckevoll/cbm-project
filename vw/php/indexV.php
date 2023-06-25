@@ -1,28 +1,28 @@
 <?php
 
-class indexV extends cbmPageV
+class indexV extends cbmV
 {
 
-  public function cbmBase()
+  public function cBase()
   {
     return $this->renderBaseTag();
   }
 
-  public function cbmTitle()
+  public function cTitle()
   {
     $str  = '';
     $str = $_SERVER['SERVER_NAME'];
     return $str;
   }
 
-  public function cbmHeader()
+  public function cHeader()
   {
     $str  = '';
     $str = $_SERVER['SERVER_NAME'];
     return $str;
   }
 
-  public function cbmContent()
+  public function cContent()
   {
     $html  = '';
     $articles = $this->get('articles');
@@ -43,7 +43,7 @@ class indexV extends cbmPageV
     return $html;
   }
 
-  public function cbmPages()
+  public function cPages()
   {
     $html  = '';
     $html .= '<hr>';

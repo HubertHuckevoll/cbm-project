@@ -1,9 +1,9 @@
 <?php
 
-class sitemapV extends cbmPageV
+class sitemapV extends cbmV
 {
 
-  public function cbmContent()
+  public function cContent()
   {
     $str = '';
     $articles = $this->get('sitemap', 'articles');

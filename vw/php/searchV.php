@@ -1,6 +1,6 @@
 <?php
 
-class searchV extends cbmPageV
+class searchV extends cbmV
 {
 
   /**
@@ -8,7 +8,7 @@ class searchV extends cbmPageV
    * @return string
    * ________________________________________________________________
    */
-  public function cbmBase(): string
+  public function cBase(): string
   {
     return $this->renderBaseTag();
   }
@@ -18,7 +18,7 @@ class searchV extends cbmPageV
    * @return string
    * ________________________________________________________________
    */
-  public function cbmContent(): string
+  public function cContent(): string
   {
     $str = '';
     $entries = $this->get('search', 'results');

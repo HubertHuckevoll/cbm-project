@@ -46,7 +46,7 @@ $prefs = [
   'articlesPerPage' => 3,
 ];
 
-$router = new cAppC($pathInfoAssignCallback, $prefs);
+$router = new cAppC('indexC', 'show', $pathInfoAssignCallback, $prefs);
 $router->run();
 
 ?>

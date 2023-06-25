@@ -1,23 +1,23 @@
 <?php
 
-class galleryV extends cbmPageV
+class galleryV extends cbmV
 {
-  public function cbmBase()
+  public function cBase()
   {
     return $this->renderBaseTag();
   }
 
-  public function cbmTitle()
+  public function cTitle()
   {
     return $this->get('article', 'title') ?? '';
   }
 
-  public function cbmHeader()
+  public function cHeader()
   {
     return $this->get('article', 'title') ?? '';
   }
 
-  public function cbmContent()
+  public function cContent()
   {
     $tags = ($this->get('index', 'tags') !== '') ? '&tags='.$this->get('index', 'tags') : '';
 

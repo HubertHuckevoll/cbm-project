@@ -1,23 +1,23 @@
 <?php
 
-class pagesV extends cbmPageV
+class pagesV extends cbmV
 {
-  public function cbmBase()
+  public function cBase()
   {
     return $this->renderBaseTag();
   }
 
-  public function cbmTitle()
+  public function cTitle()
   {
     return $this->get('article', 'title') ?? '';
   }
 
-  public function cbmHeader()
+  public function cHeader()
   {
     return $this->get('article', 'title') ?? '';
   }
 
-  public function cbmContent()
+  public function cContent()
   {
     return $this->get('article', 'content') ?? '';
   }

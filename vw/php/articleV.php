@@ -1,39 +1,39 @@
 <?php
 
-class articleV extends cbmPageV
+class articleV extends cbmV
 {
-  public function cbmBase()
+  public function cBase()
   {
     return $this->renderBaseTag();
   }
 
-  public function cbmTitle()
+  public function cTitle()
   {
     return $this->get('article', 'title') ?? '';
   }
 
-  public function cbmMetadata()
+  public function cMetadata()
   {
     return $this->renderArticleMetadata();
   }
 
-  public function cbmHeader()
+  public function cHeader()
   {
     return $this->get('article', 'title') ?? '';
   }
 
-  public function cbmDate()
+  public function cDate()
   {
     $timestamp = $this->get('article', 'date');
     return $this->renderDate($timestamp);
   }
 
-  public function cbmArticle()
+  public function cArticle()
   {
     return $this->get('article', 'content') ?? '';
   }
 
-  public function cbmImages()
+  public function cImages()
   {
     $html  = '';
     $imgs = $this->get('article', 'images');
@@ -53,7 +53,7 @@ class articleV extends cbmPageV
     return $html;
   }
 
-  public function cbmFooter()
+  public function cFooter()
   {
     $page = $this->get('index', 'articleBoxPage');
     return '<a href="'.$this->renderHrefIndex($page).'">Zurück</a>';
