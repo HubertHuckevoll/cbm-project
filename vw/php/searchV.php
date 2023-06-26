@@ -3,32 +3,18 @@
 class searchV extends cbmV
 {
 
-  /**
-   * Summary of cbmBase
-   * @return string
-   * ________________________________________________________________
-   */
-  public function cBase(): string
-  {
-    return $this->renderBaseTag();
-  }
-
-  /**
-   * Summary of drawRandom
-   * @return string
-   * ________________________________________________________________
-   */
-  public function cContent(): string
+  public function drawPage(array $entries, string $tags): void
   {
     $str = '';
-    $entries = $this->get('search', 'results');
+    $this->setTag('base', $this->renderBaseTag());
 
     foreach($entries as $entry)
     {
-      $str .= '<p><a href="'.$this->renderHrefArticle($entry['article']['articleName']).'">'.$entry['hit'].'</a></p>';
+      $str .= '<p><a href="'.$this->renderHrefArticle($entry['article']['articleName'], $tags).'">'.$entry['hit'].'</a></p>';
     }
 
-    return $str;
+    $this->setTag('content', $str);
+    $this->draw();
   }
 
 }

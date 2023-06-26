@@ -20,7 +20,7 @@ $pathInfoAssignCallback = function($pathInfoParts)
     case 3:
       $keyVal['mod'] = $pathInfoParts[0];
       $keyVal['hook'] = $pathInfoParts[1];
-      if (substr($pathInfoParts[2], 0, 1) == '[')
+      if (substr($pathInfoParts[2], 0, 1) == '_')
       {
         $keyVal['tags'] = substr($pathInfoParts[2], 1, -1);
       }

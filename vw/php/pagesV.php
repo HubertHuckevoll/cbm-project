@@ -2,24 +2,16 @@
 
 class pagesV extends cbmV
 {
-  public function cBase()
-  {
-    return $this->renderBaseTag();
-  }
 
-  public function cTitle()
+  public function drawPage($article)
   {
-    return $this->get('article', 'title') ?? '';
-  }
+    $this->setTag('base', $this->renderBaseTag());
+    $this->setTag('title', $article['title']);
+    $this->setTag('metadata', $this->renderArticleMetadata($article));
+    $this->setTag('header', $article['title']);
+    $this->setTag('content', $article['content']);
 
-  public function cHeader()
-  {
-    return $this->get('article', 'title') ?? '';
-  }
-
-  public function cContent()
-  {
-    return $this->get('article', 'content') ?? '';
+    $this->draw();
   }
 }
 

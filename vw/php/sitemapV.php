@@ -3,12 +3,9 @@
 class sitemapV extends cbmV
 {
 
-  public function cContent()
+  public function drawPage(array $articles, array $pages): void
   {
     $str = '';
-    $articles = $this->get('sitemap', 'articles');
-    $pages = $this->get('sitemap', 'pages');
-
     $protocol = ($_SERVER['SERVER_PORT'] == 443) ? 'https://' : 'http://';
     $root = $protocol.$_SERVER['HTTP_HOST'];
 
@@ -34,9 +31,11 @@ class sitemapV extends cbmV
       }
     }
 
+    $this->setTag('content', $str);
+
     header('Content-Type: text/xml');
 
-    return $str;
+    $this->draw();
   }
 }
 

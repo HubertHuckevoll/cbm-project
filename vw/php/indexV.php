@@ -3,53 +3,30 @@
 class indexV extends cbmV
 {
 
-  public function cBase()
-  {
-    return $this->renderBaseTag();
-  }
-
-  public function cTitle()
-  {
-    $str  = '';
-    $str = $_SERVER['SERVER_NAME'];
-    return $str;
-  }
-
-  public function cHeader()
-  {
-    $str  = '';
-    $str = $_SERVER['SERVER_NAME'];
-    return $str;
-  }
-
-  public function cContent()
+  public function drawPage(array $index, array $articles): void
   {
     $html  = '';
-    $articles = $this->get('articles');
 
-    if ($articles !== null)
+    $this->setTag('base', $this->renderBaseTag());
+    $this->setTag('title', $_SERVER['SERVER_NAME']);
+    $this->setTag('header', $_SERVER['SERVER_NAME']);
+
+    $html  = '';
+    $html .= '<ul>';
+    foreach($articles as $item)
     {
-      $html .= '<ul>';
-      foreach($articles as $item)
-      {
-        $html .= '<li>'.
-                   '<a href="'.$this->renderHrefArticle($item['articleName']).'">'.$item['title'].'</a>'.
-                   '<p>'.$item['summary'].'</p>'.
-                 '</li>';
-      }
-      $html .= '</ul>';
+      $html .= '<li>'.
+                 '<a href="'.$this->renderHrefArticle($item['articleName'], $index['tags']).'">'.$item['title'].'</a>'.
+                 '<p>'.$item['summary'].'</p>'.
+               '</li>';
     }
+    $html .= '</ul>';
+    $this->setTag('content', $html);
 
-    return $html;
-  }
-
-  public function cPages()
-  {
     $html  = '';
     $html .= '<hr>';
-
-    $page = $this->get('index', 'page');
-    $maxPage = $this->get('index', 'maxPage');
+    $page = $index['page'];
+    $maxPage = $index['maxPage'];
 
     for ($i = 0; $i < $maxPage; $i++)
     {
@@ -59,13 +36,14 @@ class indexV extends cbmV
       }
       else
       {
-
-        $html .= '<a href="'.$this->renderHrefIndex($i).'"><span>'.($i+1).'</span></a>&nbsp;';
+        $html .= '<a href="'.$this->renderHrefIndex($i, $index['tags']).'"><span>'.($i+1).'</span></a>&nbsp;';
       }
     }
+    $this->setTag('pages', $html);
 
-    return $html;
+    $this->draw();
   }
+
 }
 
 ?>

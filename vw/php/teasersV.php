@@ -3,32 +3,18 @@
 class teasersV extends cbmV
 {
 
-  /**
-   * Summary of cbmBase
-   * @return string
-   * ________________________________________________________________
-   */
-  public function cBase(): string
-  {
-    return $this->renderBaseTag();
-  }
-
-  /**
-   * Summary of drawRandom
-   * @return string
-   * ________________________________________________________________
-   */
-  public function cContent(): string
+  public function drawPage(array $articles, string $tags)
   {
     $str = '';
-    $entries = $this->get('teasers', 'articles');
-
-    foreach($entries as $entry)
+    foreach($articles as $article)
     {
-      $str .= '<p><a href="'.$this->renderHrefArticle($entry['articleName']).'">'.$entry['articleName'].'</a></p>';
+      $str .= '<p><a href="'.$this->renderHrefArticle($article['articleName'], $tags).'">'.$article['articleName'].'</a></p>';
     }
 
-    return $str;
+    $this->setTag('base', $this->renderBaseTag());
+    $this->setTag('content', $str);
+
+    $this->draw();
   }
 
 }
