@@ -2,7 +2,6 @@
 
 class teasersV extends cbmV
 {
-
   public function drawPage(array $articles, string $tags): void
   {
     $this->setTag('base', $this->renderBaseTag());

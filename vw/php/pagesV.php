@@ -2,7 +2,6 @@
 
 class pagesV extends cbmV
 {
-
   public function drawPage($article): void
   {
     $this->setTag('base', $this->renderBaseTag());

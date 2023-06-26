@@ -2,7 +2,6 @@
 
 class indexV extends cbmV
 {
-
   public function drawPage(array $index, array $articles): void
   {
     $this->setTag('base', $this->renderBaseTag());

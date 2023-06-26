@@ -2,7 +2,6 @@
 
 class galleryV extends cbmV
 {
-
   public function drawPage(array $article, array $gallery, string $tags): void
   {
     $this->setTag('base', $this->renderBaseTag());

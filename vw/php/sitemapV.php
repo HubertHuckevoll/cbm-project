@@ -2,7 +2,6 @@
 
 class sitemapV extends cbmV
 {
-
   public function drawPage(array $articles, array $pages): void
   {
     $str = '';
