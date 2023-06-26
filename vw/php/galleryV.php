@@ -3,13 +3,8 @@
 class galleryV extends cbmV
 {
 
-  public function drawPage(array $index, array $article, array $gallery)
+  public function drawPage(array $article, array $gallery, string $tags): void
   {
-    $this->setTag('base', $this->renderBaseTag());
-    $this->setTag('title', $article['title']);
-    $this->setTag('metadata', $this->renderArticleMetadata($article));
-    $this->setTag('header', $article['title']);
-
     $curIdx  = $gallery['curIdx'];
     $nextIdx = $gallery['nextIdx'];
     $prevIdx = $gallery['prevIdx'];
@@ -18,9 +13,9 @@ class galleryV extends cbmV
     $curDesc     = $article['images'][$curIdx]['title'];
     $articleName = $article['articleName'];
 
-    $prev = $this->renderHrefGallery($articleName, $prevIdx, $index['tags']);
-    $next = $this->renderHrefGallery($articleName, $nextIdx, $index['tags']);
-    $back = $this->renderHrefArticle($articleName, $index['tags']);
+    $prev = $this->renderHrefGallery($articleName, $prevIdx, $tags);
+    $next = $this->renderHrefGallery($articleName, $nextIdx, $tags);
+    $back = $this->renderHrefArticle($articleName, $tags);
 
     $erg = '<div>'.
             '<div>'.
@@ -38,6 +33,10 @@ class galleryV extends cbmV
             '</div>'.
           '</div>';
 
+    $this->setTag('base', $this->renderBaseTag());
+    $this->setTag('title', $article['title']);
+    $this->setTag('metadata', $this->renderArticleMetadata($article));
+    $this->setTag('header', $article['title']);
     $this->setTag('content', $erg);
 
     $this->draw();

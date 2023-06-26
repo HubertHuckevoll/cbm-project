@@ -32,9 +32,7 @@ class sitemapV extends cbmV
     }
 
     $this->setTag('content', $str);
-
     header('Content-Type: text/xml');
-
     $this->draw();
   }
 }

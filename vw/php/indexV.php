@@ -5,26 +5,17 @@ class indexV extends cbmV
 
   public function drawPage(array $index, array $articles): void
   {
-    $html  = '';
-
-    $this->setTag('base', $this->renderBaseTag());
-    $this->setTag('title', $_SERVER['SERVER_NAME']);
-    $this->setTag('header', $_SERVER['SERVER_NAME']);
-
-    $html  = '';
-    $html .= '<ul>';
+    $listHtml = '<ul>';
     foreach($articles as $item)
     {
-      $html .= '<li>'.
-                 '<a href="'.$this->renderHrefArticle($item['articleName'], $index['tags']).'">'.$item['title'].'</a>'.
-                 '<p>'.$item['summary'].'</p>'.
-               '</li>';
+      $listHtml .= '<li>'.
+                    '<a href="'.$this->renderHrefArticle($item['articleName'], $index['tags']).'">'.$item['title'].'</a>'.
+                    '<p>'.$item['summary'].'</p>'.
+                   '</li>';
     }
-    $html .= '</ul>';
-    $this->setTag('content', $html);
+    $listHtml .= '</ul>';
 
-    $html  = '';
-    $html .= '<hr>';
+    $pageNrHtml = '<hr>';
     $page = $index['page'];
     $maxPage = $index['maxPage'];
 
@@ -32,14 +23,19 @@ class indexV extends cbmV
     {
       if ($i == $page)
       {
-        $html .= '<span>'.($i+1).'</span>&nbsp;';
+        $pageNrHtml .= '<span>'.($i+1).'</span>&nbsp;';
       }
       else
       {
-        $html .= '<a href="'.$this->renderHrefIndex($i, $index['tags']).'"><span>'.($i+1).'</span></a>&nbsp;';
+        $pageNrHtml .= '<a href="'.$this->renderHrefIndex($i, $index['tags']).'"><span>'.($i+1).'</span></a>&nbsp;';
       }
     }
-    $this->setTag('pages', $html);
+
+    $this->setTag('base', $this->renderBaseTag());
+    $this->setTag('title', $_SERVER['SERVER_NAME']);
+    $this->setTag('header', $_SERVER['SERVER_NAME']);
+    $this->setTag('content', $listHtml);
+    $this->setTag('pages', $pageNrHtml);
 
     $this->draw();
   }
