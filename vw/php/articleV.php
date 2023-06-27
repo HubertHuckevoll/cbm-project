@@ -19,14 +19,12 @@ class articleV extends cbmV
   protected function renderImageList(array $article, string $tags): string
   {
     $str = parent::renderImageList($article, $tags);
-    /*
     $str .= '<style>
               img {
                 height: 500px;
                 margin-right: 50px;
               }
             </style>';
-            */
 
     return $str;
   }
