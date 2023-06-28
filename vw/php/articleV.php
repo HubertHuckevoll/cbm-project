@@ -7,7 +7,6 @@ class articleV extends cbmV
     $this->setTag('base', $this->renderBaseTag());
     $this->setTag('title', $article['title']);
     $this->setTag('metadata', $this->renderArticleMetadata($article));
-    $this->setTag('header', $article['title']);
     $this->setTag('date', $this->renderDate($article['date']));
     $this->setTag('article', $article['content']);
     $this->setTag('images', $this->renderImageList($article, $index['tags']));

@@ -7,10 +7,14 @@ class galleryV extends cbmV
     $this->setTag('base', $this->renderBaseTag());
     $this->setTag('title', $article['title']);
     $this->setTag('metadata', $this->renderArticleMetadata($article));
-    $this->setTag('header', $article['title']);
     $this->setTag('content', $this->renderGallery($article, $gallery, $tags));
 
     $this->draw();
+  }
+
+  public function renderGallery(array $article, array $gallery, string $tags): string
+  {
+    return '<div class="gallery">'.parent::renderGallery($article, $gallery, $tags).'</div>';
   }
 }
 

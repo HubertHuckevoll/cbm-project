@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-    <html>
+    <html lang="de">
         <head>
             <title><c-title></title>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" type="text/css" href="/cbm-project/vw/css/main.css">
             <c-metadata>
             <c-base>
         </head>
         <body>
             <header>
-                <h1><c-header></h1>
+                <h1><c-title></h1>
             </header>
             <main><c-content></main>
         </body>

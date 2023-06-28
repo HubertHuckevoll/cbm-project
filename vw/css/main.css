@@ -1,0 +1,11 @@
+.gallery p:nth-child(1)
+{
+  text-align: right;
+}
+
+.gallery img
+{
+  display: block;
+  object-fit: contain;
+  width: 100%;
+}
