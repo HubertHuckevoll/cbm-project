@@ -1,0 +1,30 @@
+{
+  "name": "CBM Project Upload",
+  "short_name": "Share Image",
+  "start_url": "/cbm-project/index.php/pwaC/show",
+  "id": "/cbm-project/index.php/pwaC/show",
+  "scope": "/cbm-project/",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "description": "CBM Upload to blog",
+  "dir": "ltr",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/cbm-project/vw/assets/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "share_target": {
+    "action": "/cbm-project/index.php/pwaC/upload",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "files": [{
+          "name": "file",
+          "accept": ["image/*", "*.*"]
+      }]
+    }
+  }
+}
