@@ -10,20 +10,21 @@ class pwaC extends cPageC
 
   public function show()
   {
-    $this->view->drawPage('PWA Upload!', '');
+    $this->view->drawPage('PWA Upload!', '', '');
   }
 
   public function upload()
   {
     $results = [];
-    $uploads_dir = "../cbm-project.data/entries.assets";
-    foreach($_FILES["file"] as $file)
+    $upDir = "../cbm-project.data/entries.assets/";
+
+    foreach($_FILES as $file)
     {
-      $tmp_name = $file["tmp_name"];
-      $name = basename($file["name"]);
-      $result = "$uploads_dir/$name";
-      move_uploaded_file($tmp_name, $result);
-      $results[] = $result;
+      $fname = $upDir.$file['name'];
+      if (move_uploaded_file($file['tmp_name'], $fname))
+      {
+        $results[] = $fname;
+      }
     }
 
     $str = print_r($_FILES + $this->request, true);
