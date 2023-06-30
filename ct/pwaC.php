@@ -5,7 +5,7 @@ class pwaC extends cPageC
   public function __construct(array $request, ?array $prefs = null)
   {
     $view = new pwaV('pwaV');
-    parent::__construct($request, $view, $prefs);
+    parent::__construct($request, $prefs, $view);
   }
 
   public function show()
