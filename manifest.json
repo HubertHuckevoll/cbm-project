@@ -1,12 +1,12 @@
 {
   "name": "CBM Project Upload",
-  "short_name": "Share Image",
+  "short_name": "CBM Project Upload",
   "start_url": "/cbm-project/index.php/pwaC/show",
   "id": "/cbm-project/index.php/pwaC/show",
   "scope": "/cbm-project/",
   "theme_color": "#000000",
   "background_color": "#000000",
-  "description": "CBM Upload to blog",
+  "description": "CBM Project Upload",
   "dir": "ltr",
   "display": "standalone",
   "icons": [
@@ -22,8 +22,8 @@
     "enctype": "multipart/form-data",
     "params": {
       "files": [{
-          "name": "file",
-          "accept": ["image/*", "*.*"]
+          "name": "image",
+          "accept": ["image/*"]
       }]
     }
   }
