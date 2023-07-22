@@ -11,11 +11,6 @@ class galleryV extends cbmV
 
     $this->draw();
   }
-
-  public function renderGallery(array $article, array $gallery, string $tags): string
-  {
-    return '<div class="gallery">'.parent::renderGallery($article, $gallery, $tags).'</div>';
-  }
 }
 
 ?>
